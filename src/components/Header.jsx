@@ -84,6 +84,7 @@ const Header = () => {
                                 className="relative group"
                                 data-tooltip-id="user-tooltip"
                                 data-tooltip-content={user.displayName || "User"}
+                                data-tooltip-place="left"
                             >
                                 <img
                                     src={user.photoURL || "https://t4.ftcdn.net/jpg/09/15/52/43/360_F_915524393_ociCXIzKAlzxcHVPFevNLfkB4VsxwvvO.jpg"}
@@ -124,7 +125,7 @@ const Header = () => {
                 </div>
 
                 {isMenuOpen && (
-                    <ul className="absolute top-16 left-0 w-full bg-blue-700 p-4 rounded-lg shadow-lg z-50">
+                    <ul className="w-1/2 absolute top-24 right-0 bg-blue-700 p-4 rounded-lg shadow-lg z-50">
                         {links}
                     </ul>
                 )}

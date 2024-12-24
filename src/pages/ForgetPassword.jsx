@@ -4,6 +4,7 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../config/firebase.config';
 import { toast, ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 const ForgetPassword = () => {
     const location = useLocation();
@@ -19,9 +20,21 @@ const ForgetPassword = () => {
         e.preventDefault();
         try {
             await sendPasswordResetEmail(auth, email);
-            toast.success('Password reset email sent! Check your inbox.');
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "Password reset email sent! Check your inbox!",
+                showConfirmButton: false,
+                timer: 1500
+            });
         } catch (error) {
-            toast.error('Failed to send reset email. Make sure the email is registered.');
+            Swal.fire({
+                position: "middle",
+                icon: "error",
+                title: "Failed to send reset email. Make sure the email is registered!",
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     };
 

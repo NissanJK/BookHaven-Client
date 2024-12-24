@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, sign
 import { toast, ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { auth } from '../config/firebase.config';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -16,13 +17,25 @@ const Register = () => {
         e.preventDefault();
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordRegex.test(password)) {
-            toast.error('Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long.');
+            Swal.fire({
+                position: "middle",
+                icon: "error",
+                title: "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             return;
         }
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             await updateProfile(userCredential.user, { displayName: name, photoURL });
-            toast.success('Registration successful!');
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "Registration successful!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             navigate('/');
         } catch (error) {
             toast.error(error.message);
@@ -33,7 +46,13 @@ const Register = () => {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-            toast.success('Google registration successful!');
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "Google registration successful!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             navigate('/');
         } catch (error) {
             toast.error(error.message);

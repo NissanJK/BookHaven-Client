@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 
 import { toast, ToastContainer } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 import { auth } from '../config/firebase.config';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -16,7 +17,13 @@ const Login = () => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            toast.success('Login successful!');
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "Login successful!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             navigate(from, { replace: true });
         } catch (error) {
             toast.error(error.message);
@@ -27,7 +34,13 @@ const Login = () => {
         const provider = new GoogleAuthProvider();
         try {
             await signInWithPopup(auth, provider);
-            toast.success('Google login successful!');
+            Swal.fire({
+                position: "middle",
+                icon: "success",
+                title: "Google login successful!",
+                showConfirmButton: false,
+                timer: 1500
+            });
             navigate(from, { replace: true });
         } catch (error) {
             toast.error(error.message);

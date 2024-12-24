@@ -9,6 +9,8 @@ import ForgetPassword from "../pages/ForgetPassword";
 import Home from "../pages/Home";
 import PrivateRoute from "./PrivateRoute";
 import AddBook from "../pages/AddBook";
+import AllBooks from "../pages/AllBooks";
+import UpdateBook from "../pages/UpdateBook";
 
 const router = createBrowserRouter([
     {
@@ -21,9 +23,16 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-
                 path: "/add-book",
                 element:<PrivateRoute><AddBook/></PrivateRoute>
+            },
+            {
+                path: "/all-books",
+                element:<PrivateRoute><AllBooks/></PrivateRoute>
+            },
+            {
+                path: 'update-book/:bookId',
+                element: <PrivateRoute><UpdateBook/></PrivateRoute>,
             },
             {
                 path: "/login",
