@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
 
 const AddBook = () => {
@@ -87,6 +88,9 @@ const AddBook = () => {
 
     return (
         <div className="w-10/12 mx-auto p-6 bg-gray-700 rounded shadow-md my-10">
+            <Helmet>
+                <title>BookHaven | Add Book</title>
+            </Helmet>
             <h2 className="text-2xl font-bold mb-6 text-center">Add a New Book</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">

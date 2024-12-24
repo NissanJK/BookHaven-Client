@@ -29,7 +29,7 @@ const CustomerFeedback = () => {
                 {feedbacks.map((feedback) => (
                     <div
                         key={feedback.id}
-                        className="feedback-card bg-gray-500 shadow rounded overflow-hidden text-center p-6"
+                        className="w-11/12 mx-auto feedback-card bg-gray-500 shadow rounded overflow-hidden text-center p-6"
                     >
                         <img
                             src={feedback.image}
