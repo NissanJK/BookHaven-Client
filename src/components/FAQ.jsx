@@ -25,11 +25,11 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="faq-section py-10 bg-gray-700">
+        <div className="py-10">
             <h2 className="text-3xl font-bold text-center mb-6 text-gray-100">Frequently Asked Questions</h2>
             <div className="w-11/12 mx-auto space-y-6">
                 {faqs.map((faq, index) => (
-                    <div key={index} className="faq-item bg-gray-500 p-4 rounded shadow">
+                    <div key={index} className="faq-item bg-gray-700 p-4 rounded shadow">
                         <h3 className="font-semibold text-lg text-gray-100">{faq.question}</h3>
                         <p className="text-gray-300 mt-2">{faq.answer}</p>
                     </div>
