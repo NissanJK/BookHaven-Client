@@ -66,13 +66,13 @@ const Header = () => {
             <nav className="container mx-auto flex justify-between items-center">
             <div className="text-xl font-bold flex flex-col flex-grow lg:flex-grow-0">
                     {user && (
-                        <div className="text-sm">
+                        <div className="text-sm hidden md:flex">
                             Welcome, <span>{user.displayName || 'User'}</span>!
                         </div>
                     )}
                     <NavLink to="/" className="flex gap-2 items-center mt-2">
                         BookHaven
-                        <img src="./logo.jpg" alt="" className="rounded-full size-8"/>
+                        <img src="./logo.jpg" alt="" className="rounded-full size-8 hidden md:flex"/>
                     </NavLink>
                 </div>
                 <ul className="hidden lg:flex items-center gap-4">{links}</ul>
@@ -87,9 +87,9 @@ const Header = () => {
                                 data-tooltip-place="left"
                             >
                                 <img
-                                    src={user.photoURL || "https://t4.ftcdn.net/jpg/09/15/52/43/360_F_915524393_ociCXIzKAlzxcHVPFevNLfkB4VsxwvvO.jpg"}
+                                    src={user.photoURL || "./logo.jpg"}
                                     alt={user.displayName}
-                                    className="rounded-full w-10 h-10 cursor-pointer"
+                                    className="rounded-full w-10 h-10 cursor-pointer hidden md:flex"
                                 />
                             </div>
                             <button
