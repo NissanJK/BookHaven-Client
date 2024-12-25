@@ -19,7 +19,7 @@ const UpdateBook = () => {
     useEffect(() => {
         const fetchBookDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/books/${bookId}`, {
+                const response = await axios.get(`https://library-management-system-server-swart.vercel.app/books/${bookId}`, {
                     withCredentials: true,
                 });
                 setFormData(response.data);
@@ -44,7 +44,7 @@ const UpdateBook = () => {
         e.preventDefault();
         try {
             const response = await axios.put(
-                `http://localhost:5000/books/${bookId}`,
+                `https://library-management-system-server-swart.vercel.app/books/${bookId}`,
                 formData,
                 { withCredentials: true }
             );
