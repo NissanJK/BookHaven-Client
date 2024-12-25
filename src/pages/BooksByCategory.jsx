@@ -36,9 +36,9 @@ const BooksByCategory = () => {
                 <title>BookHaven | Books on {category}</title>
             </Helmet>
             <div className='w-11/12 mx-auto mb-8'>
-            <button onClick={() => navigate(-1)} className="btn btn-outline">
-                Back
-            </button>
+                <button onClick={() => navigate(-1)} className="btn btn-outline">
+                    Back
+                </button>
             </div>
             <h1 className="text-3xl font-bold mb-8 text-center text-gray-100">Books in {category}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-11/12 mx-auto">

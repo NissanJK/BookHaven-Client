@@ -40,31 +40,35 @@ const BorrowedBooks = () => {
 
 
     return (
-        <div className=" py-10 bg-gray-700">
+        <div className="py-10 bg-gray-700">
             <Helmet>
                 <title>BookHaven | Borrowed Books</title>
             </Helmet>
-            <div className='w-11/12 mx-auto'>
+            <div className="w-11/12 mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Borrowed Books</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {borrowedBooks.map(book => (
-                        <div key={book._id} className="bg-gray-600 card p-2 rounded-lg shadow hover:shadow-lg transition ">
-                            <img src={book.coverImage} alt={book.title} className="h-60 object-cover gloss rounded" />
-                            <div className="card-body">
-                                <h3 className="text-xl font-bold mt-2 text-gray-100">{book.title}</h3>
-                                <p className='text-sm text-gray-300'>Category: {book.category}</p>
-                                <p className='text-sm text-gray-300'>Borrowed Date: {new Date(book.createdAt).toLocaleDateString()}</p>
-                                <p className='text-sm text-gray-300'>Return Date: {new Date(book.returnDate).toLocaleDateString()}</p>
-                                <button
-                                    className="btn btn-danger mt-2 hover:bg-red-700 transition"
-                                    onClick={() => handleReturn(book._id)}
-                                >
-                                    Return
-                                </button>
+                {borrowedBooks.length === 0 ? (
+                    <p className="text-center text-gray-300 text-2xl">You have no borrowed books at the moment.</p>
+                ) : (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {borrowedBooks.map(book => (
+                            <div key={book._id} className="bg-gray-600 card p-2 rounded-lg shadow hover:shadow-lg transition">
+                                <img src={book.coverImage} alt={book.title} className="h-60 object-cover gloss rounded" />
+                                <div className="card-body">
+                                    <h3 className="text-xl font-bold mt-2 text-gray-100">{book.title}</h3>
+                                    <p className="text-sm text-gray-300">Category: {book.category}</p>
+                                    <p className="text-sm text-gray-300">Borrowed Date: {new Date(book.createdAt).toLocaleDateString()}</p>
+                                    <p className="text-sm text-gray-300">Return Date: {new Date(book.returnDate).toLocaleDateString()}</p>
+                                    <button
+                                        className="btn btn-danger mt-2 hover:bg-red-700 transition"
+                                        onClick={() => handleReturn(book._id)}
+                                    >
+                                        Return
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     );
