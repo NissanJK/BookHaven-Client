@@ -1,4 +1,5 @@
 import React from 'react';
+import { Typewriter } from 'react-simple-typewriter';
 
 const CustomerFeedback = () => {
     const feedbacks = [
@@ -37,7 +38,17 @@ const CustomerFeedback = () => {
                             className="w-16 h-16 rounded-full mx-auto mb-4 p-1 bg-white"
                         />
                         <h3 className="text-xl font-semibold text-gray-100">{feedback.name}</h3>
-                        <p className="text-gray-300 italic mt-2">"{feedback.feedback}"</p>
+                        <p className="text-gray-300 italic mt-2">
+                            <Typewriter
+                                words={[`"${feedback.feedback}"`]}
+                                loop={false}
+                                cursor
+                                cursorStyle="|"
+                                typeSpeed={50}
+                                deleteSpeed={30}
+                                delaySpeed={1000}
+                            />
+                        </p>
                     </div>
                 ))}
             </div>

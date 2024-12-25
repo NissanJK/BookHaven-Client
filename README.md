@@ -27,3 +27,4 @@ The client-side of **BookHaven**, an intuitive and responsive platform for libra
 - **React Tooltip**: For tooltip.  
 - **Firebase**: Backend as a Service (BaaS) for authentication and hosting.  
 - **React Rating Stars Component**: For displaying and managing book ratings.  
+- **React Simple Typewriter**: For typewriter effect.  
