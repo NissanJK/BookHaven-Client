@@ -27,7 +27,7 @@ const AddBook = () => {
 
         if (!formData.image || !formData.name || !formData.authorName || !formData.category || !formData.rating) {
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "error",
                 title: "Please fill in all required fields!",
                 showConfirmButton: false,
@@ -50,7 +50,7 @@ const AddBook = () => {
 
             if (response.data.success) {
                 Swal.fire({
-                    position: "middle",
+                    position: "center",
                     icon: "success",
                     title: "Book Data Has been added.",
                     showConfirmButton: false,
@@ -67,7 +67,7 @@ const AddBook = () => {
                 });
             } else {
                 Swal.fire({
-                    position: "middle",
+                    position: "center",
                     icon: "error",
                     title: "Failed to add the book!",
                     showConfirmButton: false,
@@ -77,7 +77,7 @@ const AddBook = () => {
         } catch (error) {
             console.error(error);
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "error",
                 title: "An error occurred while adding the book!",
                 showConfirmButton: false,

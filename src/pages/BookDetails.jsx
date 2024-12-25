@@ -24,7 +24,7 @@ const BookDetails = () => {
 
         axiosSecure.post('/borrow', { bookId: id, returnDate }).then(() => {
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Book borrowed successfully!",
                 showConfirmButton: false,
@@ -35,7 +35,7 @@ const BookDetails = () => {
             console.error('Error borrowing book:', error);
             const errorMessage = error.response?.data?.message || 'Failed to borrow the book.';
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "error",
                 title: errorMessage,
                 showConfirmButton: false,

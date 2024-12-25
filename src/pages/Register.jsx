@@ -18,7 +18,7 @@ const Register = () => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordRegex.test(password)) {
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "error",
                 title: "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long!",
                 showConfirmButton: false,
@@ -30,7 +30,7 @@ const Register = () => {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             await updateProfile(userCredential.user, { displayName: name, photoURL });
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Registration successful!",
                 showConfirmButton: false,
@@ -47,7 +47,7 @@ const Register = () => {
         try {
             await signInWithPopup(auth, provider);
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Google registration successful!",
                 showConfirmButton: false,

@@ -7,7 +7,10 @@ const Footer = () => {
             <div className="w-11/12 md:w-9/12 mx-auto px-4">
                 <div className="flex flex-wrap justify-between items-center border-b border-gray-700 pb-6 gap-5">
                     <div>
-                        <h1 className="text-2xl font-bold text-white">BookHaven</h1>
+                        <div className="flex gap-2 items-center text-2xl font-bold text-white">
+                            BookHaven
+                            <img src="./logo.jpg" alt="" className="rounded-full size-8 mt-2" />
+                        </div>
                         <p className="mt-1 text-sm text-gray-400">
                             Your ultimate destination for exploring, borrowing, and managing books.
                         </p>

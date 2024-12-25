@@ -18,7 +18,7 @@ const Login = () => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Login successful!",
                 showConfirmButton: false,
@@ -35,7 +35,7 @@ const Login = () => {
         try {
             await signInWithPopup(auth, provider);
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Google login successful!",
                 showConfirmButton: false,

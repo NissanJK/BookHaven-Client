@@ -21,7 +21,7 @@ const ForgetPassword = () => {
         try {
             await sendPasswordResetEmail(auth, email);
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "success",
                 title: "Password reset email sent! Check your inbox!",
                 showConfirmButton: false,
@@ -29,7 +29,7 @@ const ForgetPassword = () => {
             });
         } catch (error) {
             Swal.fire({
-                position: "middle",
+                position: "center",
                 icon: "error",
                 title: "Failed to send reset email. Make sure the email is registered!",
                 showConfirmButton: false,

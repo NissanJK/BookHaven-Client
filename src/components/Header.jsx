@@ -70,7 +70,7 @@ const Header = () => {
                             Welcome, <span>{user.displayName || 'User'}</span>!
                         </div>
                     )}
-                    <NavLink to="/" className="hover:text-gray-200 flex gap-2 items-center mt-2">
+                    <NavLink to="/" className="flex gap-2 items-center mt-2">
                         BookHaven
                         <img src="./logo.jpg" alt="" className="rounded-full size-8"/>
                     </NavLink>
