@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FAQ = () => {
     const faqs = [
@@ -24,14 +24,32 @@ const FAQ = () => {
         },
     ];
 
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleAccordion = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     return (
         <div className="py-10">
             <h2 className="text-3xl font-bold text-center mb-6 text-gray-100">Frequently Asked Questions</h2>
-            <div className="w-11/12 mx-auto space-y-6">
+            <div className="w-11/12 mx-auto space-y-4">
                 {faqs.map((faq, index) => (
-                    <div key={index} className="faq-item bg-gray-700 p-4 rounded shadow">
-                        <h3 className="font-semibold text-lg text-gray-100">{faq.question}</h3>
-                        <p className="text-gray-300 mt-2">{faq.answer}</p>
+                    <div
+                        key={index}
+                        className={`collapse collapse-arrow ${
+                            activeIndex === index ? "collapse-open" : "collapse-close"
+                        } bg-gray-700 rounded-lg`}
+                    >
+                        <div
+                            className="collapse-title text-lg font-semibold text-gray-100 cursor-pointer"
+                            onClick={() => toggleAccordion(index)}
+                        >
+                            {faq.question}
+                        </div>
+                        <div className="collapse-content text-gray-300">
+                            <p>{faq.answer}</p>
+                        </div>
                     </div>
                 ))}
             </div>
