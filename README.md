@@ -1,4 +1,4 @@
-# Library Management System - Client Side (BookHaven)
+# BookHaven - Client Side (Library Management System)
 
 ## Purpose  
 The client-side of **BookHaven**, an intuitive and responsive platform for library management. It allows users to explore books, borrow or return them, and administrators to manage the library catalog.
