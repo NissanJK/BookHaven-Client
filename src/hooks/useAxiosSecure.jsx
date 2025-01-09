@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
 });
 
 const useAxiosSecure = () => {
-    const { signOutUser } = useAuth();
+    const { logout } = useAuth();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
         }, error => {
             console.log('api response error status', error.status);
             if (error.status === 401 || error.status === 403) {
-                signOutUser()
+                logout()
                     .then(() => {
                         navigate('/login')
                     })

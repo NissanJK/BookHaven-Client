@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/all-books",
-                element:<PrivateRoute><AllBooks/></PrivateRoute>
+                element:<AllBooks/>
             },
             {
                 path: 'update-book/:bookId',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'books/:id',
-                element: <PrivateRoute><BookDetails/></PrivateRoute>,
+                element: <BookDetails/>,
             },
             {
                 path: "/login",

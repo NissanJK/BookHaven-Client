@@ -24,18 +24,18 @@ const Header = () => {
                     Home
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    to="/all-books"
+                    className={({ isActive }) =>
+                        isActive ? "font-bold text-yellow-300" : "hover:text-gray-200"
+                    }
+                >
+                    All Books
+                </NavLink>
+            </li>
             {user && (
                 <>
-                    <li>
-                        <NavLink
-                            to="/all-books"
-                            className={({ isActive }) =>
-                                isActive ? "font-bold text-yellow-300" : "hover:text-gray-200"
-                            }
-                        >
-                            All Books
-                        </NavLink>
-                    </li>
                     <li>
                         <NavLink
                             to="/add-book"
@@ -62,9 +62,9 @@ const Header = () => {
     );
 
     return (
-        <header className="bg-blue-600 text-white p-4">
+        <header className="bg-blue-600 text-white p-4 sticky top-0 z-50">
             <nav className="container mx-auto flex justify-between items-center">
-            <div className="text-xl font-bold flex flex-col flex-grow lg:flex-grow-0">
+                <div className="text-xl font-bold flex flex-col flex-grow lg:flex-grow-0">
                     {user && (
                         <div className="text-sm hidden md:flex">
                             Welcome, <span>{user.displayName || 'User'}</span>!
@@ -72,7 +72,7 @@ const Header = () => {
                     )}
                     <NavLink to="/" className="flex gap-2 items-center mt-2">
                         BookHaven
-                        <img src="./logo.jpg" alt="" className="rounded-full size-8 hidden md:flex"/>
+                        <img src="./logo.jpg" alt="" className="rounded-full size-8 hidden md:flex" />
                     </NavLink>
                 </div>
                 <ul className="hidden lg:flex items-center gap-4">{links}</ul>

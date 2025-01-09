@@ -15,11 +15,11 @@ const AuthProvider = ({ children }) => {
                 if (currentUser?.email) {
                     const user = { email: currentUser.email };
                     const response = await axios.post('https://library-management-system-server-swart.vercel.app/jwt', user, { withCredentials: true });
-                    console.log('JWT token issued:', response.data);
+                    //console.log('JWT token issued:', response.data);
                     setUser(currentUser);
                 } else {
                     await axios.post('https://library-management-system-server-swart.vercel.app/logout', {}, { withCredentials: true });
-                    console.log('Logged out successfully');
+                    //console.log('Logged out successfully');
                     setUser(null);
                 }
             } catch (error) {

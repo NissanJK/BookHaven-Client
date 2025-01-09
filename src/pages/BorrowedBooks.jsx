@@ -44,7 +44,7 @@ const BorrowedBooks = () => {
             <Helmet>
                 <title>BookHaven | Borrowed Books</title>
             </Helmet>
-            <div className="w-11/12 mx-auto">
+            <div className="w-11/12 mx-auto min-h-screen">
                 <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Borrowed Books</h2>
                 {borrowedBooks.length === 0 ? (
                     <p className="text-center text-gray-300 text-2xl">You have no borrowed books at the moment.</p>
