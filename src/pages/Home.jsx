@@ -4,6 +4,7 @@ import Banner from '../components/Banner';
 import FAQ from '../components/FAQ';
 import CustomerFeedback from '../components/CustomerFeedback';
 import BookCategory from './BookCategory';
+import Newsletter from '../components/Newsletter';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <BookCategory/>
             <CustomerFeedback/>
             <FAQ/>
+            <Newsletter/>
             
         </div>
     );
