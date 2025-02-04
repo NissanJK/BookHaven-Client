@@ -1,6 +1,6 @@
 # 📚 BookHaven - Client Side (Library Management System)  
 
-![BookHaven Screenshot](/image.png) 
+![BookHaven Screenshot](./public/image.png) 
 
 ## 🚀 Overview  
 **BookHaven** is an intuitive and responsive **Library Management System** that allows users to explore books, borrow and return them, and enables administrators to efficiently manage the library catalog.  
