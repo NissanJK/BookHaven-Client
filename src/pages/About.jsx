@@ -65,9 +65,6 @@ const About = () => {
                         Be part of a vibrant community that celebrates books and reading. Whether you're a casual reader
                         or a bookworm, BookHaven welcomes you!
                     </p>
-                    <Link to="/login" className="btn btn-outline">
-                        Login
-                    </Link>
                 </div>
             </div>
         </div>

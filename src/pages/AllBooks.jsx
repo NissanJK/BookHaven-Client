@@ -118,7 +118,7 @@ const AllBooks = () => {
                             <p className="text-sm mb-2">Quantity: {book.quantity}</p>
                         </div>
                         <div>
-                            {user?.email === 'jawadul.karim78@gmail.com' ? ( 
+                            {user?.email === 'admin@bookhaven.com' ? ( 
                                 <button
                                     onClick={() => handleUpdate(book._id)}
                                     className="block w-full bg-blue-600 text-white font-medium py-2 rounded hover:bg-blue-700 mt-4"

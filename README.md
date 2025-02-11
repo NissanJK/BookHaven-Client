@@ -37,8 +37,7 @@
 ✅ **📖 Browse and Search** – Explore books by category and search easily.  
 ✅ **📚 Borrowing System** – Borrow and return books with real-time updates.  
 ✅ **🔐 User Authentication** – Secure login and signup using Firebase Authentication.  
-✅ **🎨 Responsive Design** – Optimized for all devices.  
-✅ **🛠️ Admin Dashboard** – CRUD operations to manage book records.  
+✅ **🎨 Responsive Design** – Optimized for all devices.    
 ✅ **💬 Interactive UI** – Smooth user experience with alerts, modals, and tooltips.  
 
 ---
