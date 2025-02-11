@@ -113,7 +113,7 @@ npm start
 
 ## 📬 Contact  
 📧 **Email:** [jawadul.karim78@gmail.com](mailto:jawadul.karim78@gmail.com)  
-🔗 **LinkedIn:** [Jawadul Karim](https://www.linkedin.com/in/jawadul-karim-612a18318/)  
+🔗 **LinkedIn:** [Jawadul Karim](https://www.linkedin.com/in/jawadul-karim28/)  
 
 ---
 
