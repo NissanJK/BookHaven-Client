@@ -39,6 +39,7 @@
 ✅ **🔐 User Authentication** – Secure login and signup using Firebase Authentication.  
 ✅ **🎨 Responsive Design** – Optimized for all devices.    
 ✅ **💬 Interactive UI** – Smooth user experience with alerts, modals, and tooltips.  
+✅ **💬 Admin specific route** – Admin specific route such as add books,update books.  
 
 ---
 
