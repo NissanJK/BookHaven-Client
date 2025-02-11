@@ -31,7 +31,7 @@ const BooksByCategory = () => {
     if (error) return <p className="text-red-500">{error}</p>;
 
     return (
-        <div className='py-10 bg-gray-700'>
+        <div className='py-10'>
             <Helmet>
                 <title>BookHaven | Books on {category}</title>
             </Helmet>

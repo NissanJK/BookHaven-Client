@@ -8,7 +8,7 @@ import Newsletter from '../components/Newsletter';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Helmet>
                 <title>BookHaven | Home</title>
             </Helmet>

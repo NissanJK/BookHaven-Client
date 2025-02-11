@@ -29,7 +29,7 @@ const Newsletter = () => {
     };
 
     return (
-        <div className="newsletter-section py-10 bg-gray-600 text-gray-100 mb-10">
+        <div className="newsletter-section py-10 text-gray-100">
             <div className="w-11/12 mx-auto text-center">
                 <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
                 <p className="text-lg text-gray-300 mb-6">

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
-        <div className="about-page py-10 bg-gray-700 text-gray-100">
+        <div className="about-page py-10 text-gray-100">
             <Helmet>
                 <title>BookHaven | About</title>
             </Helmet>

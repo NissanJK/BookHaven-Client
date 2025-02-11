@@ -47,7 +47,7 @@ const BorrowedBooks = () => {
     };
 
     return (
-        <div className="py-10 bg-gray-700">
+        <div className="py-10">
             <Helmet>
                 <title>BookHaven | Borrowed Books</title>
             </Helmet>

@@ -65,7 +65,7 @@ const BookDetails = () => {
     }
 
     return (
-        <div className='flex justify-center py-10 bg-gray-700'>
+        <div className='flex justify-center py-10'>
             <Helmet>
                 <title>BookHaven | {book.name} Details</title>
             </Helmet>

@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-gray-300 py-6">
+        <footer className="bg-gray-700 text-gray-200 py-6">
             <div className="w-11/12 md:w-9/12 mx-auto px-4">
                 <div className="flex flex-wrap justify-between items-center border-b border-gray-700 pb-6 gap-5">
                     <div>
@@ -11,7 +11,7 @@ const Footer = () => {
                             BookHaven
                             <img src="./logo.jpg" alt="" className="rounded-full size-8 mt-2" />
                         </div>
-                        <p className="mt-1 text-sm text-gray-400">
+                        <p className="mt-1 text-sm text-gray-200">
                             Your ultimate destination for exploring, borrowing, and managing books.
                         </p>
                     </div>
@@ -36,8 +36,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <hr/>
                 <div className="text-center pt-6">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-200">
                         &copy; {new Date().getFullYear()} BookHaven. All rights reserved.
                     </p>
                 </div>
