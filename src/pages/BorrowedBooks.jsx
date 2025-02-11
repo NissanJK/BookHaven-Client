@@ -5,13 +5,21 @@ import { Helmet } from 'react-helmet';
 
 const BorrowedBooks = () => {
     const [borrowedBooks, setBorrowedBooks] = useState([]);
+    const [loading, setLoading] = useState(true);
     const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
         axiosSecure.get('/borrowed-books')
-            .then(res => setBorrowedBooks(res.data))
-            .catch(err => console.error('Error fetching borrowed books:', err));
+            .then(res => {
+                setBorrowedBooks(res.data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error('Error fetching borrowed books:', err);
+                setLoading(false);
+            });
     }, [axiosSecure]);
+
     const handleReturn = (borrowId) => {
         axiosSecure.post('/return', { borrowId })
             .then(() => {
@@ -38,7 +46,6 @@ const BorrowedBooks = () => {
             });
     };
 
-
     return (
         <div className="py-10 bg-gray-700">
             <Helmet>
@@ -46,7 +53,12 @@ const BorrowedBooks = () => {
             </Helmet>
             <div className="w-11/12 mx-auto min-h-screen">
                 <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Borrowed Books</h2>
-                {borrowedBooks.length === 0 ? (
+
+                {loading ? (
+                    <div className='flex justify-center items-center h-screen'>
+                        <span className="loading loading-infinity loading-lg"></span>
+                    </div>
+                ) : borrowedBooks.length === 0 ? (
                     <p className="text-center text-gray-300 text-2xl">You have no borrowed books at the moment.</p>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
