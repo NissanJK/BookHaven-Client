@@ -34,8 +34,8 @@ const Header = () => {
                     All Books
                 </NavLink>
             </li>
-            {user && (
-                <>
+            {user?.email == "admin@bookhaven.com" &&
+                (
                     <li>
                         <NavLink
                             to="/add-book"
@@ -46,6 +46,20 @@ const Header = () => {
                             Add Book
                         </NavLink>
                     </li>
+                )
+            }
+            {user && (
+                <>
+                    {/* <li>
+                        <NavLink
+                            to="/add-book"
+                            className={({ isActive }) =>
+                                isActive ? "font-bold text-yellow-300" : "hover:text-gray-200"
+                            }
+                        >
+                            Add Book
+                        </NavLink>
+                    </li> */}
                     <li>
                         <NavLink
                             to="/borrowed-books"

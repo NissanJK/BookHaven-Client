@@ -12,13 +12,13 @@ const AllBooks = () => {
     const [searchText, setSearchText] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [showAvailable, setShowAvailable] = useState(false);
-    const [loading, setLoading] = useState(true); // Loading state added
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const { user } = useAuth();
 
     useEffect(() => {
         const fetchBooks = async () => {
-            setLoading(true); // Set loading to true before fetching
+            setLoading(true);
             try {
                 const response = await axios.get(
                     "https://library-management-system-server-swart.vercel.app/books",
@@ -36,7 +36,7 @@ const AllBooks = () => {
                     text: "Please try again later.",
                 });
             } finally {
-                setLoading(false); // Stop loading after data is fetched
+                setLoading(false);
             }
         };
         fetchBooks();
@@ -77,7 +77,6 @@ const AllBooks = () => {
             </Helmet>
             <h2 className="text-2xl font-bold mb-6 text-center">All Books</h2>
 
-            {/* Show Loading Spinner */}
             {loading ? (
                 <div className='flex justify-center items-center h-screen'>
                     <span className="loading loading-infinity loading-lg"></span>
@@ -113,7 +112,6 @@ const AllBooks = () => {
                         </select>
                     </div>
 
-                    {/* Card View */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredBooks.map((book) => (
                             <div key={book._id} className="p-4 bg-gray-700 rounded shadow-md flex flex-col justify-between">
@@ -131,12 +129,21 @@ const AllBooks = () => {
                                 </div>
                                 <div>
                                     {user?.email === "admin@bookhaven.com" ? (
-                                        <button
-                                            onClick={() => handleUpdate(book._id)}
-                                            className="block w-full bg-blue-600 text-white font-medium py-2 rounded hover:bg-blue-700 mt-4"
-                                        >
-                                            Update
-                                        </button>
+                                        <div className="flex gap-4">
+                                            <button
+                                                onClick={() => handleDetails(book._id)}
+                                                className="block w-full bg-gray-600 text-white font-medium py-2 rounded hover:bg-gray-700 mt-4"
+                                            >
+                                                Details
+                                            </button>
+                                            <button
+                                                onClick={() => handleUpdate(book._id)}
+                                                className="block w-full bg-blue-600 text-white font-medium py-2 rounded hover:bg-blue-700 mt-4"
+                                            >
+                                                Update
+                                            </button>
+
+                                        </div>
                                     ) : (
                                         <button
                                             onClick={() => handleDetails(book._id)}

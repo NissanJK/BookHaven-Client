@@ -28,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add-book",
-                element:<PrivateRoute><AddBook/></PrivateRoute>
+                element:<PrivateRoute adminOnly={true}><AddBook/></PrivateRoute>
             },
             {
                 path: "/all-books",

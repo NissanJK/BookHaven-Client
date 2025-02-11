@@ -76,6 +76,11 @@ const UpdateBook = () => {
             <Helmet>
                 <title>BookHaven | Update Book</title>
             </Helmet>
+            <div className='mb-8'>
+                <button onClick={() => navigate(-1)} className="btn btn-outline">
+                    Back
+                </button>
+            </div>
             <h2 className="text-2xl font-bold mb-6 text-center">Update Book</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
